@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/tony-nz/vue-lcdRGB">
-    <img src="logo.png" alt="Logo">
+    <img src="logo.gif" alt="Logo">
   </a>
 
   <h3 align="center">Vue LCD RGB</h3>
