@@ -3,6 +3,20 @@
     <div
       class="flex items-center justify-center h-full w-full backdrop-blur-md"
     >
+      <div class="fixed top-0 right-0 mx-2 flex justify-end mt-4">
+        <a
+          href="https://github.com/tony-nz/vue-lcdRGB"
+          target="_blank"
+          class="text-xs text-gray-900"
+          ><span class="mr-2"
+            >Created by tony-nz
+            <span class="text-xs text-slate-900">(Tony Myers)</span></span
+          ><img
+            src="/github.svg"
+            alt="github"
+            class="w-4 h-4 inline-block mr-2"
+        /></a>
+      </div>
       <div
         class="relative p-4 rounded-lg shadow-lg bg-[#e0e1d8] border-2 border-gray-300"
       >
