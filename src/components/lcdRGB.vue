@@ -97,14 +97,17 @@ export default defineComponent({
         "mx-auto",
         "p-2",
         "space-y-1",
-        "bg-[" + options.backgroundColor + "]",
+        // "bg-[" + options.backgroundColor + "]",
+        // "border-[" + options.borderSize + "]",
+        // "border-[" + options.borderColor + "]",
+        // "border-solid",
         "text-[0px]",
-        "border-[" + options.borderSize + "]",
-        "border-solid",
-        "border-[" + options.borderColor + "]",
         "rounded-md",
         "pixelated"
       );
+
+      lcdElement.style.backgroundColor = options.backgroundColor;
+      lcdElement.style.border = `${options.borderSize} solid ${options.borderColor}`;
 
       // Append the LCD element to the place element
       place.appendChild(lcdElement);
@@ -145,15 +148,18 @@ export default defineComponent({
               pixel.classList.add(
                 "pixel",
                 "inline-block",
-                "bg-[" + options.pixelOffColor + "]",
-                "h-[" + options.pixelSize + "px]",
-                "w-[" + options.pixelSize + "px]",
+                // "bg-[" + options.pixelOffColor + "]",
+                // "h-[" + options.pixelSize + "px]",
+                // "w-[" + options.pixelSize + "px]",
                 "border-0",
                 "p-0",
                 "m-0",
                 "ml-[1px]",
                 "mt-[1px]"
               );
+              pixel.style.height = options.pixelSize + "px";
+              pixel.style.width = options.pixelSize + "px";
+              pixel.style.backgroundColor = options.pixelOffColor;
               rowElement.appendChild(pixel);
             }
           }
@@ -199,13 +205,15 @@ export default defineComponent({
       const pixelArray = lcdLetters[letter];
       const pixelElements = letterElement.querySelectorAll(".pixel");
 
-      pixelElements.forEach((pixelElement, idx) => {
+      pixelElements.forEach((pixelElement: any, idx) => {
         const rowIndex = Math.floor(idx / 5); // Calculate the row index within the letter
         const columnIndex = idx % 5; // Calculate the column index within the letter
         if (pixelArray[rowIndex].charAt(columnIndex) === "1") {
-          pixelElement.classList.add("bg-[" + options.pixelOnColor + "]");
+          // pixelElement.classList.add("bg-[" + options.pixelOnColor + "]");
+          pixelElement.style.backgroundColor = options.pixelOnColor;
         } else {
-          pixelElement.classList.remove("bg-[" + options.pixelOnColor + "]");
+          // pixelElement.classList.remove("bg-[" + options.pixelOnColor + "]");
+          pixelElement.style.backgroundColor = options.pixelOffColor;
         }
       });
     };
