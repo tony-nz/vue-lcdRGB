@@ -84,9 +84,10 @@ npm run dev
 
     onMounted(() => {
       if (lcdRGB.value) {
-        lcdRGB.value.writeText("lcdScreen", 0);
-        lcdRGB.value.blink(true, 0, 0);
-        lcdRGB.value.rotateRow("Hello this is some long text ", 1, 500);
+        lcdRGB.value.writeText("vue-lcdRGB", 0, true);
+        lcdRGB.value.writeText("by Tony Myers", 2);
+        lcdRGB.value.blink(true, 2, 13);
+        lcdRGB.value.rotateRow("https://github.com/tony-nz ", 3, 500);
       }
     });
 
